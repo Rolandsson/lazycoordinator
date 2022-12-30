@@ -5,7 +5,7 @@ const bodyParser = require("body-parser")
 const cors = require("cors");
 
 const corsOptions = {
-    origin: "https://github.com"
+    origin: "https://rolandsson.github.io/lazycoordinator/"
 }
 
 app.use(cors(corsOptions))
