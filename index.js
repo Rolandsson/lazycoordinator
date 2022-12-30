@@ -52,7 +52,7 @@ app.get("/vote", (req, res) => {
         transientVotes[key].average = (transientVotes[key].totalUx + transientVotes[key].totalTheme) / (queries[key].length * 2)
     });
 
-    res.send(transientVotes);
+    res.jsonp(transientVotes);
 })
 
 app.get("/result", (req, res) => {
