@@ -13,11 +13,12 @@ app.use(bodyParser.urlencoded())
 
 app.use((req, res, next) => {
   
-    if (req.method === "OPTIONS") {
-    return res.status(200).end();
+  if (req.method === "OPTIONS") {
+      res.header("Access-Control-Allow-Origin", "*");
+  } else {
+    res.header("Access-Control-Allow-Origin", corsOptions.origin);
   }
-    
-  res.header("Access-Control-Allow-Origin", corsOptions.origin);
+  
   res.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept");
   res.header("Access-Control-Allow-Methods", "OPTIONS,GET,POST");
     
