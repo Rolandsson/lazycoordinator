@@ -74,8 +74,8 @@ app.get("/", (req, res) => {
         }
     });
 
-    res.setHeader('content-type', 'application/javascript');
-    res.send(JSON.stringify(votes));
+    //res.setHeader('content-type', 'application/javascript');
+    res.jsonp(votes);
 });
 
 app.listen(port, () => {
