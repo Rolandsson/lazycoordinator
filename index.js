@@ -25,14 +25,18 @@ app.post('/vote', (req, res) => {
     if(queries[req.body.target] == undefined) {
         queries[req.body.target] = [];
     }
-    let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
+    
+    queries[req.body.target].push({ip: ip, vote: req.body.vote});
+    res.sendStatus(200);
+    
+    /*let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
 
     if(queries[req.body.target].find(query => query.ip == ip)) {
         res.sendStatus(403);
     } else {
         queries[req.body.target].push({ip: ip, vote: req.body.vote});
         res.sendStatus(200);
-    }
+    }*/
 })
 
 app.get("/vote", (req, res) => {
