@@ -63,7 +63,7 @@ app.get("/result", (req, res) => {
 });
 
 app.get("/votes", (req, res) => {
-    res.send(queries);
+    //res.send(queries);
 })
 
 app.get("/", (req, res) => {
