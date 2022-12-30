@@ -8,8 +8,14 @@ const corsOptions = {
     origin: "https://rolandsson.github.io/lazycoordinator/"
 }
 
-app.use(cors(corsOptions))
+//app.use(cors(corsOptions))
 app.use(bodyParser.urlencoded())
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", corsOptions.origin); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 let queries = {}
 
