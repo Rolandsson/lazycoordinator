@@ -75,7 +75,7 @@ app.get("/", (req, res) => {
     });
 
     res.setHeader('content-type', 'application/javascript');
-    res.send(votes);
+    res.send(JSON.stringify(votes));
 });
 
 app.listen(port, () => {
