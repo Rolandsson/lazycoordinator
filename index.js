@@ -74,6 +74,7 @@ app.get("/", (req, res) => {
         }
     });
 
+    res.setHeader('content-type', 'application/javascript');
     res.send(votes);
 });
 
