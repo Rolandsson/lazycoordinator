@@ -8,7 +8,6 @@ const corsOptions = {
     origin: "rolandsson.github.io"
 }
 
-//app.use(cors(corsOptions))
 app.use(bodyParser.urlencoded())
 
 app.use((req, res, next) => {
